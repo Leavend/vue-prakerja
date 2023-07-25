@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .content {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+      }
+
+      #red {
+        background-color: red;
+      }
+
+      #green {
+        background-color: green;
+      }
+
+      #blue {
+        background-color: blue;
+      }
+
+      #yellow {
+        background-color: yellow;
+      }
+
+      #purple {
+        background-color: purple;
+      }
+
+      #grey {
+        background-color: grey;
+      }
+
+      @media (min-width: 600px) {
+        .container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .content {
+          width: calc(50% - 20px);
+        }
+      }
+
+      @media (min-width: 600px) and (max-width: 960px) {
+        .container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .content {
+          width: calc(50% - 20px);
+        }
+      }
+
+      @media (min-width: 960px) {
+        .container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .content {
+          width: calc(33% - 20px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content" id="red"></div>
+      <div class="content" id="green"></div>
+      <div class="content" id="blue"></div>
+      <div class="content" id="yellow"></div>
+      <div class="content" id="purple"></div>
+      <div class="content" id="grey"></div>
+    </div>
+  </body>
+</html>
