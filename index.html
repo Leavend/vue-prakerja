@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=#id, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    "
+  >
+    <div
+      id="app"
+      style="
+        align-items: center;
+        border: 1px solid #ccc;
+        padding: 20px;
+        max-width: 400px;
+        width: 100%;
+      "
+    >
+      <h1 style="color: #d2042d">Latihan Day 2 - Todo List dengan Vue</h1>
+      <ol>
+        <li v-for="(todo, index) in todos" :key="index">{{ todo }}</li>
+      </ol>
+      <input type="text" v-model="newTodo" @keyup.enter="addToDo" />
+      <button @click="addToDo">Tambahkan</button>
+      <div v-if="todos.length >= 4">Hebat!</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          newTodo: "",
+          todos: [],
+        },
+        methods: {
+          addToDo() {
+            if (this.newTodo.trim() !== "") {
+              this.todos.push(this.newTodo);
+              this.newTodo = "";
+            }
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
